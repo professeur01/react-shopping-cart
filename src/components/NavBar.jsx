@@ -9,8 +9,8 @@ const NavBar = () => {
         <div className="nav-bag">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
+            width="35"
+            height="35"
             fill="currentColor"
             className="bi bi-handbag-fill"
             viewBox="0 0 16 16"
