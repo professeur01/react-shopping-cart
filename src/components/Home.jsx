@@ -10,7 +10,7 @@ const Home = () => {
         <p>An error occured</p>
       ) : (
         <>
-          <h1>Welcome to our store!</h1>
+          <h2>Welcome to our store!</h2>
           <div className="products">
             {data?.map((product) => (
               <div key={product.id} className="product" >
