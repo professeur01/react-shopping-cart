@@ -8,10 +8,10 @@
 
   function App() {
   return (
-    <BrowserRouter className="App">
+    <BrowserRouter>
     <NavBar />
     <Routes>
-    <Route path="/Cart" Component={Cart}/>
+    <Route path="/Cart" exact Component={Cart}/>
     <Route path="/not-found" Component={NotFound}/>
     <Route path="*" element={<Navigate to="/not-found" />}  />
     <Route exact path="/" Component={Home}/>
