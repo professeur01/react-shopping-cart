@@ -29,7 +29,30 @@ const Cart = () => {
           </div>
         </div>
       ) : (
-        <></>
+        <div>
+          <div className="titles">
+            <h3 className="product-title">Product</h3>
+            <h3 className="price">Price</h3>
+            <h3 className="quantity">Quantity</h3>
+            <h3 className="total">Total</h3>
+          </div>
+          <div className="cart-items">
+            {cart?.cartItems.map(cartItem => (
+                <div className="cart-item" key={cartItem.id}>
+                    <div className="cart-product">
+                        <img src={cartItem.image} alt={cartItem.name} />
+                        <div>
+                            <h3> {cartItem.name}</h3>
+                            <p>{cartItem.desc}</p>
+                            <button>remove</button>
+                        </div>
+                    </div>
+                    <div className="cart-product-price">${cartItem.price}</div>
+                    <div className="cart-product-quantity"></div>
+                </div>
+            ))}
+          </div>
+        </div>
       )}
     </div>
   );
