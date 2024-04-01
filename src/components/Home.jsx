@@ -1,4 +1,5 @@
 import { useDispatch } from "react-redux";
+import { useNavigate } from 'react-router-dom';
 import { useGetAllProductsQuery } from "../features/productsApi";
 import { addToCart } from "../features/cartSlice";
 
@@ -6,9 +7,11 @@ import { addToCart } from "../features/cartSlice";
 const Home = () => {
   const { data, error, isLoading } = useGetAllProductsQuery();
   const dispatch = useDispatch();
+  let navigate = useNavigate();
 
  const handleAddToCart = (product) => {
   dispatch(addToCart(product));
+  navigate("/cart");
   };
 
   return (
