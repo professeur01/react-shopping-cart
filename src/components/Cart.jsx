@@ -1,10 +1,19 @@
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { removeFromCart, decreaseCart } from "../features/cartSlice";
 
 const Cart = () => {
   const cart = useSelector((state) => state.cart);
+  const dispatch = useDispatch();
+
+  const handleRemoveFromCart = (cartItem) => {
+    dispatch(removeFromCart(cartItem));
+  };
+  const handleDecreaseCart = (cartItem) => {
+    dispatch(decreaseCart(cartItem));
+  };
   return (
-    <div className="cart-container" >
+    <div className="cart-container">
       <h2>Shopping cart</h2>
       {cart.cartItems.length === 0 ? (
         <div className="cart-empty">
@@ -44,12 +53,16 @@ const Cart = () => {
                   <div>
                     <h3> {cartItem.name}</h3>
                     <p>{cartItem.desc}</p>
-                    <button>remove</button>
-                  </div >
+                    <button onClick={() => handleRemoveFromCart(cartItem)}>
+                      remove
+                    </button>
+                  </div>
                 </div>
                 <div className="cart-product-price">${cartItem.price}</div>
                 <div className="cart-product-quantity">
-                  <button>-</button>
+                  <button onClick={() => handleDecreaseCart(cartItem)}>
+                    -
+                  </button>
                   <div className="count">{cartItem.cartQuantity}</div>
                   <button>+</button>
                 </div>
