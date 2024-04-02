@@ -45,7 +45,7 @@ const Cart = () => {
                     <h3> {cartItem.name}</h3>
                     <p>{cartItem.desc}</p>
                     <button>remove</button>
-                  </div>
+                  </div >
                 </div>
                 <div className="cart-product-price">${cartItem.price}</div>
                 <div className="cart-product-quantity">
