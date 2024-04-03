@@ -33,6 +33,7 @@ import { configureStore } from '@reduxjs/toolkit';
 import App from './App';
 import produtsReducer, { productsFetch } from './features/produtsSlice';
 import { productsApi } from './features/productsApi';
+import { getTotals } from './features/cartSlice';
 import cartReducer from './features/cartSlice';
 
 const store = configureStore({
@@ -55,4 +56,5 @@ root.render(
 );
 
 store.dispatch(productsFetch()); // Dispatch the action after rendering
+store.dispatch(getTotals()); // Dispatch the action after rendering
 
