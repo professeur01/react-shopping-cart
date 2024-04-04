@@ -1,29 +1,3 @@
-/*   import App from './App';
-  import React from 'react';
-  import ReactDOM from 'react-dom/client';
-
-  import { configureStore } from '@reduxjs/toolkit'
-  import { Provider } from "react-redux";
-
-  import produtsReducer, { productsFetch } from "./features/produtsSlice";
-
-  const store = configureStore({
-  reducer: {
-    products: produtsReducer,
-  }
-});
-
-  store.dispatch(productsFetch());
-  const root = ReactDOM.createRoot(document.getElementById('root'));
-
-  root.render(
-    <Provider store={store}>
-  <React.StrictMode>
-      <App />
-  </React.StrictMode>
-    </Provider>
-);
- */
 
 import React from 'react';
 import ReactDOM from 'react-dom/client';
