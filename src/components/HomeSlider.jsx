@@ -19,13 +19,45 @@ const HomeSlider = () => {
       src: "https://res.cloudinary.com/daqa87dud/image/upload/v1712241642/pubImage/apple_watch_i0i0rw.jpg",
     },
   ]);
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const lastIndex = currentImage.length - 1;
+    if (index < 0) {
+      setIndex(lastIndex);
+    }
+    if (index > lastIndex) {
+      setIndex(0);
+    }
+  }, [index, currentImage]);
+
+   // autoslide, clearInterval = een cleanup functie noodzakelijk bij interval
+   useEffect(() => {
+    let slider = setInterval(() => {
+      setIndex(index + 1);
+    }, 3000);
+    return () => clearInterval(slider);
+  }, [index]);
 
   return (
     <div className="home-slider">
       <section className="shopping-slider">
-        { currentImage?.map((img, index) => (
+        { currentImage.map((img, imgIndex) => {
+        const { id, src } = img;
+
+        let position = "nextSlide";
+          if (imgIndex === index) {
+            position = "activeSlide";
+          }
+          if (
+            imgIndex === index - 1 ||
+            (index === 0 && imgIndex === currentImage.length - 1)
+          ) {
+            position = "lastSlide";
+          }
+
           <img key={img.id} src={img.src} alt="" />
-        )) }
+        }) }
       </section>
     </div>
   );

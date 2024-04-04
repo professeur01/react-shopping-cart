@@ -368,5 +368,12 @@
     border-radius: 10px;
     overflow: hidden;
   }
+  .shopping-slider .nextSlide {
+    transform: translateX(100%);
+  }
+  .shopping-slider .activeSlide {
+    opacity: 1;
+    transform: translateX(0);
+  }
 
   /* home-slider */
