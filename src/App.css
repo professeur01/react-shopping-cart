@@ -99,17 +99,17 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    margin-top: 2rem;
+    margin-top: 3rem;
   }
 
   .product {
     width: 250px;
-    max-width: 100%;
+    max-width: 90%;
     height: 400px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin: 1rem auto;
+    margin: 1.2rem auto;
     padding: 1rem;
     border-radius: 15px;
     background: white;
