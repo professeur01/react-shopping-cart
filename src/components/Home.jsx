@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import { useGetAllProductsQuery } from "../features/productsApi";
 import { addToCart } from "../features/cartSlice";
 
+import HomeSlider from "./HomeSlider";
+
 
 const Home = () => {
   const { data, error, isLoading } = useGetAllProductsQuery();
@@ -16,6 +18,7 @@ const Home = () => {
 
   return (
     <div className="home-container">
+    <HomeSlider />
       {isLoading ? (
         <p>Loading...</p>
       ) : error ? (
